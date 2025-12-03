@@ -9,7 +9,9 @@ import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.routing.*
 
 fun main() {
-    embeddedServer(Netty, port = 8083, host = "0.0.0.0", module = Application::module)
+    val port = System.getenv("PORT")?.toInt() ?: 8083
+
+    embeddedServer(Netty, port = port, module = Application::module)
         .start(wait = true)
 }
 
