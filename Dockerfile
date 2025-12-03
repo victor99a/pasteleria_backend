@@ -22,7 +22,7 @@ WORKDIR /app
 COPY --from=build /app/build/install/pasteleria_backend_ktor ./
 
 # Puerto donde corre Ktor (el que tienes en application.conf)
-EXPOSE 8083
+EXPOSE 8080
 
 # Comando de arranque
 CMD ["bin/pasteleria_backend_ktor"]
